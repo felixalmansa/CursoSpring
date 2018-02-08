@@ -1,0 +1,46 @@
+package com.openwebinars.springrest;
+
+import org.springframework.http.HttpMethod;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+@EnableWebSecurity
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.inMemoryAuthentication().withUser("luismi").password("lopez").roles("USER")
+			.and().withUser("admin").password("admin").roles("ADMIN");
+	}
+
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		
+		
+		http.authorizeRequests()
+			.antMatchers(HttpMethod.GET,"/api/hello").hasRole("USER")
+			.antMatchers(HttpMethod.GET,"/api/admin/hello").hasRole("ADMIN")
+			.antMatchers(HttpMethod.POST,"/api/admin/hello").hasRole("ADMIN")
+			.anyRequest().authenticated();
+		
+		/*http.csrf().disable().authorizeRequests()
+			.antMatchers("/api/hello").hasAnyRole("ADMIN","USER")
+			.antMatchers("/api/admin/**").hasRole("ADMIN")
+			.antMatchers(HttpMethod.POST,"/api/admin/hello").hasRole("ADMIN").and()
+			.httpBasic()
+				.realmName(REALMNAME).authenticationEntryPoint(getBasicAuthenticationEntryPoint()).and().sessionManagement()
+				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		*/
+
+	}
+
+	/*private BasicAuthenticationEntryPoint getBasicAuthenticationEntryPoint() {
+		BasicAuthenticationEntryPoint b = new BasicAuthenticationEntryPoint();
+		b.setRealmName(REALMNAME);
+		return b;
+	}*/
+
+}

@@ -1,0 +1,13 @@
+package com.openwebinars.springbootjersey;
+
+import java.util.Date;
+
+public class Message {
+	
+	private String message;
+	private Date date;
+	
+	
+	
+
+}

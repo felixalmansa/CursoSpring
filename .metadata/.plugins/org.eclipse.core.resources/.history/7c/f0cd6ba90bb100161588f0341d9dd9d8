@@ -1,0 +1,56 @@
+package com.openwebinars.springboot;
+
+public class Post {
+	
+	private long userdId;
+	private long id;
+	private String title;
+	private String body;
+	
+	public Post() {
+	}
+
+	public Post(long userdId, long id, String title, String body) {
+		this.userdId = userdId;
+		this.id = id;
+		this.title = title;
+		this.body = body;
+	}
+
+	public long getUserdId() {
+		return userdId;
+	}
+
+	public void setUserdId(long userdId) {
+		this.userdId = userdId;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getBody() {
+		return body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+	}
+	
+	
+	
+	
+
+}

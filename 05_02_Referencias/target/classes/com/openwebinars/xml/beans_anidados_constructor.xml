@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="vehiculo" class="com.openwebinars.beans.Vehiculo">
+		<constructor-arg name="marca" value="Mercedes Benz"></constructor-arg>
+		<constructor-arg name="modelo" value="Clase C"></constructor-arg>
+		<constructor-arg name="motor">
+			<bean class="com.openwebinars.beans.Motor">
+				<constructor-arg name="culata">
+					<bean class="com.openwebinars.beans.Culata">
+						<constructor-arg name="cantidadBujias" value="4"></constructor-arg>
+					</bean>
+				</constructor-arg>
+				<constructor-arg name="bloque">
+					<bean class="com.openwebinars.beans.Bloque">
+						<constructor-arg name="cantidadCilindros" value="4"></constructor-arg>
+					</bean>
+				</constructor-arg>
+				<constructor-arg name="carter">
+					<bean class="com.openwebinars.beans.Carter">
+						<constructor-arg name="volumenAceite" value="6.5"></constructor-arg>
+					</bean>
+				</constructor-arg>
+				<constructor-arg name="cilindrada" value="1.8"></constructor-arg>
+			</bean>
+		</constructor-arg>
+	</bean>
+
+
+</beans>

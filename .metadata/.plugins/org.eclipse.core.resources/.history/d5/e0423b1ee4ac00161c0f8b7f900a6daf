@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="mundo" class="com.openwebinars.ambitos.Mundo">
+		<constructor-arg value="Hola Mundo!"></constructor-arg>
+		<constructor-arg value="6371"></constructor-arg>
+	</bean>
+
+</beans>

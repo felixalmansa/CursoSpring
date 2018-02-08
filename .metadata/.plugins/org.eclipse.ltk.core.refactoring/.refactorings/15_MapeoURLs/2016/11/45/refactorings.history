@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;15_MapeoURLs/WebContent/WEB-INF/jsp/hello.jsp&apos; to &apos;closed.jsp&apos;" description="Rename resource &apos;hello.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/WEB-INF/jsp/hello.jsp" name="closed.jsp" stamp="1478555313009" updateReferences="true"/>
+</session>

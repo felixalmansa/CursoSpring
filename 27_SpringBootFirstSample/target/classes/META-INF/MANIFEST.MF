@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: 27_SpringBootFirstSample
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: felix.almansamercado
+Implementation-Vendor-Id: com.openwebinars
+Build-Jdk: 1.8.0_144
+Implementation-URL: http://projects.spring.io/spring-boot/27_SpringBoo
+ tFirstSample/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

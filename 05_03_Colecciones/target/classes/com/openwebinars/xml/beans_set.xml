@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="Luismi" class="com.openwebinars.beans.set.Alumno">
+		<property name="nombre" value="Luis Miguel López"></property>
+		<property name="notas">
+			<set>
+				<bean class="com.openwebinars.beans.set.Nota">
+					<property name="asignatura" value="Matemáticas"></property>
+					<property name="nota" value="7"></property>
+				</bean>
+				<bean class="com.openwebinars.beans.set.Nota">
+					<property name="asignatura" value="Física"></property>
+					<property name="nota" value="8"></property>
+				</bean>
+				<ref bean="HistoriaBean" />
+			</set>
+		</property>
+	</bean>
+
+	<bean id="HistoriaBean" class="com.openwebinars.beans.set.Nota">
+		<property name="asignatura" value="Historia"></property>
+		<property name="nota" value="10"></property>
+	</bean>
+
+</beans>

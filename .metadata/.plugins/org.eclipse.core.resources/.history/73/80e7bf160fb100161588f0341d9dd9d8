@@ -1,0 +1,61 @@
+package com.openwebinars.springboot;
+
+
+
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.client.RestTemplate;
+
+@Controller
+public class MyRestClientController {
+	
+	//final String urlList = "https://jsonplaceholder.typicode.com/posts";
+	final String urlList = "https://restcountries.eu/rest/v1/all";
+	
+	@GetMapping("/list")
+	public String listCountries(Model model) {
+		
+		enableSSL();
+		
+		RestTemplate restTemplate = new RestTemplate();
+		
+		Country[] lista = restTemplate.getForObject(urlList, Country[].class);
+		
+		model.addAttribute("lista", lista);
+		
+		return "list";
+	}
+	
+	
+	private void enableSSL() {
+        TrustManager[] trustAllCerts = new TrustManager[]{
+            new X509TrustManager() {
+                public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+                    return null;
+                }
+ 
+                public void checkClientTrusted(
+                        java.security.cert.X509Certificate[] certs, String authType) {
+                }
+ 
+                public void checkServerTrusted(
+                        java.security.cert.X509Certificate[] certs, String authType) {
+                }
+            }
+        };
+ 
+        try {
+            SSLContext sc = SSLContext.getInstance("SSL");
+            sc.init(null, trustAllCerts, new java.security.SecureRandom());
+            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
+        } catch (Exception e) {
+        }
+    }
+
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Este bean se encarga de escanear las anotaciones @Postconstuct y @Predestroy -->
+	<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean>
+	<!-- Este bean realizará tareas auxiliares en la inicialización de cualquier bean -->
+	<bean class="com.openwebinars.ciclodevida.beanpostprocessor.CustomBeanPostProcessor"></bean>
+
+	<bean id="clienteservicio" class="com.openwebinars.ciclodevida.beanpostprocessor.ClientesServicio">
+		<property name="mensaje" value="Hola, Sr. Cliente!"></property>
+	</bean>
+	
+	<!-- Otro bean -->
+	<bean id="mundo" class="com.openwebinars.ciclodevida.beanpostprocessor.Mundo">
+		<constructor-arg value="Hola Mundo!"></constructor-arg>
+		<constructor-arg value="6371"></constructor-arg>
+	</bean>
+
+
+</beans>

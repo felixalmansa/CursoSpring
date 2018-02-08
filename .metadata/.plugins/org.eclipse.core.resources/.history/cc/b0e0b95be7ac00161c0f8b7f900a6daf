@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<context:annotation-config />
+
+	<context:component-scan base-package="com.openwebinars.anotaciones.beans"></context:component-scan>
+
+	<bean id="Sevilla" class="com.openwebinars.anotaciones.autowire.Provincia">
+		<property name="nombre" value="Sevilla"></property>
+	</bean>
+
+	<bean id="SevillaCapital" class="com.openwebinars.anotaciones.autowire.Poblacion">
+		<property name="nombre" value="Sevilla"></property>
+	</bean>
+
+	<!-- <bean id="MairenaAljarafe" class="com.openwebinars.anotaciones.autowire.Poblacion">
+		<property name="nombre" value="Mairena del Aljarafe"></property>
+	</bean> -->
+	
+	<bean id="cliente" class="com.openwebinars.anotaciones.autowire.Cliente">
+        <property name="id" value="1"></property>
+    </bean>
+
+    <bean id="persona" class="com.openwebinars.anotaciones.autowire.Persona">
+        <property name="nombre" value="Luismi"></property>
+    </bean>
+	
+
+</beans>

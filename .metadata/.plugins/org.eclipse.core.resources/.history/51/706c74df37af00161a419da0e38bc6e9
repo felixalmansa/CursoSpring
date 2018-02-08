@@ -1,0 +1,5 @@
+package com.openwebinars.springrest.crud.model;
+
+public class Error {
+
+}

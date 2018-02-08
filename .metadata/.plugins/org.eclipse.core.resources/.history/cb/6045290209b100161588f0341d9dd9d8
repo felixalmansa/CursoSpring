@@ -1,0 +1,25 @@
+package com.openwebinars.springboot;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.client.RestTemplate;
+
+@Controller
+public class MyRestClientController {
+	
+	final String urlList = "https://jsonplaceholder.typicode.com/posts";
+	
+	@GetMapping("/list")
+	public String listPost(Model model) {
+		
+		RestTemplate restTemplate = new RestTemplate();
+		
+		List<Post> lista = restTemplate.getForObject(urlList, Post[].class);
+		
+		return "list";
+	}
+
+}

@@ -1,0 +1,65 @@
+package com.openwebinars.springboot;
+
+import java.nio.charset.Charset;
+
+import org.apache.tomcat.util.codec.binary.Base64;
+import org.springframework.http.HttpHeaders;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.client.RestTemplate;
+
+@Controller
+public class MyRestClientController {
+
+	final String urlUserHello = "http://localhost:9000/api/hello";
+	final String urlAdminHello = "https://localhost:9000/api/admin/hello";
+
+	@GetMapping("/")
+	public String userHello(Model model) {
+
+		RestTemplate restTemplate = new RestTemplate();
+
+		restTemplate.exchange
+		 (uri, HttpMethod.POST, new HttpEntity<T>(createHeaders(username, password)), clazz);
+		
+		return "userhello";
+
+	}
+
+	@GetMapping("/admin")
+	public String adminHello(Model model) {
+
+		return "adminhello";
+	}
+
+	private HttpHeaders createHeaders(String username, String password) {
+		return new HttpHeaders() {
+			{
+				String auth = username + ":" + password;
+				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
+				String authHeader = "Basic " + new String(encodedAuth);
+				set("Authorization", authHeader);
+			}
+		};
+	}
+
+	/*
+	 * private void enableSSL() { TrustManager[] trustAllCerts = new
+	 * TrustManager[]{ new X509TrustManager() { public
+	 * java.security.cert.X509Certificate[] getAcceptedIssuers() { return null;
+	 * }
+	 * 
+	 * public void checkClientTrusted( java.security.cert.X509Certificate[]
+	 * certs, String authType) { }
+	 * 
+	 * public void checkServerTrusted( java.security.cert.X509Certificate[]
+	 * certs, String authType) { } } };
+	 * 
+	 * try { SSLContext sc = SSLContext.getInstance("SSL"); sc.init(null,
+	 * trustAllCerts, new java.security.SecureRandom());
+	 * HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory()); }
+	 * catch (Exception e) { } }
+	 */
+
+}

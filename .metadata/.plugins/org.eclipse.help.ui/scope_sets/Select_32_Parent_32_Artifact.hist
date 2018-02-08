@@ -1,0 +1,4 @@
+#Sun Nov 13 19:43:18 CET 2016
+__DEFAULT__=false
+org.eclipse.help.ui.localSearch.master=true
+expression=Select Parent Artifact

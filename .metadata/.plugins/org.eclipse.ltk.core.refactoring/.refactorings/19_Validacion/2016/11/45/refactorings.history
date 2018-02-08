@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;19_Validacion/WebContent/WEB-INF/messages_es.properties&apos; to &apos;messages.properties&apos;" description="Rename resource &apos;messages_es.properties&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/WEB-INF/messages_es.properties" name="messages.properties" stamp="1478948263440" updateReferences="true"/>
+</session>

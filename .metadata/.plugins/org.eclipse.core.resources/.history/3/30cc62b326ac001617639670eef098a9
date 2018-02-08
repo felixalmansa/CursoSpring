@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="cliente" class="com.openwebinars.autowire.Cliente" autowire="byName">
+	<!-- <bean id="cliente" class="com.openwebinars.autowire.Cliente">-->
+		<property name="id" value="1"></property>
+		<property name="persona" ref="persona"></property>
+	</bean>
+
+	<!-- <bean id="persona" class="com.openwebinars.autowire.Persona" autowire="byName"> -->
+	<bean id="persona" class="com.openwebinars.autowire.Persona" autowire="byName">
+		<property name="nombre" value="Luismi"></property>
+		<property name="ciudad" ref="ciudad"></property>
+	</bean>
+
+	<bean id="ciudad" class="com.openwebinars.autowire.Ciudad">
+		<property name="nombre" value="Sevilla"></property>
+	</bean>
+
+
+
+
+</beans>

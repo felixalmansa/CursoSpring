@@ -1,0 +1,6 @@
+package com.openwebinars.springbootjersey;
+
+
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
+
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.8.1.201607290748-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/main/resources/com/openwebinars/xml/beans_list.xml</config>
+		<config>src/main/resources/com/openwebinars/xml/beans_set.xml</config>
+		<config>src/main/resources/com/openwebinars/xml/beans_map.xml</config>
+		<config>src/main/resources/com/openwebinars/xml/beans_props.xml</config>
+	</configs>
+	<autoconfigs>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

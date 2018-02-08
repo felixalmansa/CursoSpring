@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="agenda" class="com.openwebinars.beans.map.Agenda">
+		<constructor-arg>
+			<map>
+				<entry key="954123456789">
+					<bean class="com.openwebinars.beans.map.Contacto">
+						<property name="nombre" value="Marta" />
+						<property name="telefono" value="954123456789" />
+						<property name="email" value="marta@gmail.com" />
+					</bean>
+				</entry>
+				<entry key="698745321">
+					<bean class="com.openwebinars.beans.map.Contacto">
+						<property name="nombre" value="Víctor" />
+						<property name="telefono" value="698745321" />
+						<property name="email" value="victor@gmail.com" />
+					</bean>
+
+				</entry>
+				<entry key="954123456789" value-ref="Andrea" />
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<bean id="Andrea" class="com.openwebinars.beans.map.Contacto">
+		<property name="nombre" value="Andrea" />
+		<property name="telefono" value="954123456789" />
+		<property name="email" value="andrea@gmail.com" />
+	</bean>
+
+
+</beans>

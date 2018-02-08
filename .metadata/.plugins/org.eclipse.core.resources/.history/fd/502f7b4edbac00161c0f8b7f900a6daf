@@ -1,0 +1,5 @@
+package com.openwebinars.spring.hellospring;
+
+public class Mundo {
+
+}

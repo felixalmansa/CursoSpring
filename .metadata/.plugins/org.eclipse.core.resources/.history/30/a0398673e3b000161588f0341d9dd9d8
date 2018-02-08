@@ -1,0 +1,21 @@
+package com.openwebinars.springbootjersey;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+
+import org.springframework.http.MediaType;
+import org.springframework.stereotype.Component;
+
+@Component
+@Path("/message")
+@Produces(MediaType.APPLICATION_JSON)
+public class EndPoint {
+	
+	
+	@GET
+	public Message submitMessage() {
+		return new Message("Hello World!");
+	}
+
+}

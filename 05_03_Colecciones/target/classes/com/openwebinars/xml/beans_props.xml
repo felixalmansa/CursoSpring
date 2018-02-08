@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="Oracle" class="com.openwebinars.beans.props.ConexionBaseDatos">
+		<property name="properties">
+			<props>
+				<prop key="host">172.27.100.1</prop>
+				<prop key="port">1521</prop>
+				<prop key="SID">XE</prop>
+				<prop key="username">luismi</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="Mysql" class="com.openwebinars.beans.props.ConexionBaseDatos">
+		<property name="properties">
+			<props>
+				<prop key="host">172.27.100.2</prop>
+				<prop key="port">3306</prop>
+				<prop key="database">Spring</prop>
+				<prop key="username">luismi</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>

@@ -1,0 +1,12 @@
+package com.openwebinars.springboot;
+
+public class Post {
+	
+	private long userdId;
+	private long id;
+	private String title;
+	private String body;
+	
+	
+
+}

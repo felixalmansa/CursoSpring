@@ -1,0 +1,26 @@
+package com.openwebinars.springboot;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.client.RestTemplate;
+
+@Controller
+public class MyRestClientController {
+	
+	//final String urlList = "https://jsonplaceholder.typicode.com/posts";
+	final String urlList = "https://restcountries.eu/rest/v1/all";
+	
+	@GetMapping("/list")
+	public String listCountries(Model model) {
+		
+		RestTemplate restTemplate = RestTemplateConfig.initRestTemplateForPdfAsByteArrayAndSelfSignedHttps();
+		
+		Country[] lista = restTemplate.getForObject(urlList, Country[].class);
+		
+		model.addAttribute("lista", lista);
+		
+		return "list";
+	}
+
+}

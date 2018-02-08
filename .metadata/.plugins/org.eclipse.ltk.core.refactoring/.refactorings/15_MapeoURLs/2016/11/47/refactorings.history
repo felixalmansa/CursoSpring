@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;list.jsp&apos; to &apos;jsp&apos;&#x0D;&#x0A;- Original project: &apos;15_MapeoURLs&apos;&#x0D;&#x0A;- Destination element: &apos;jsp&apos;&#x0D;&#x0A;- Original element: &apos;list.jsp&apos;" description="Copy file" element1="WebContent/WEB-INF/jsp/list.jsp" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1479856349165" target="/56_RestClient/src/main/webapp/WEB-INF/jsp" units="0" version="1.0"/>
+</session>
